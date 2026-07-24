@@ -1,0 +1,52 @@
+<html>
+<head><title>XDMoD Configuration Details</title></head>
+<body>
+<h1>General Settings</h1>
+<form action="" method="get" class="form-item">
+  <div class="form-item">
+    <label for="site_address">Site Address:</label>
+    <p class="help-text">The template Apache configuration file uses a virtual host listening on HTTPS port 443. The Site Address specified here should match the settings in the Apache configuration.</p>
+    <input type="text" name="site_address" id="site_address" value="https://localhost/" required />
+  </div>
+
+  <div class="form-item">
+    <label for="email">Email Address:</label>
+    <p class="help-text">The email address you specify will be used as the destination for any messages sent via the portal contact page as well as account requests. In addition, any log messages configured for delivery via e-mail will be sent to this address.</p>
+    <input type="email" name="email" id="email" value="xdmod@example.com" required />
+  </div>
+
+  <div class="form-item">
+    <label for="chromium_path">Chromium Path:</label>
+    <p class="help-text">Chromium is required by the report generator for constructing reports. Setup will attempt to detect the presence of chromium on your system.</p>
+    <input type="text" name="chromium_path" id="chromium_path" value="/usr/lib64/chromium-browser/headless_shell" />
+  </div>
+
+  <div class="form-item">
+    <label for="center_logo_path">Center Logo Path:</label>
+    <p class="help-text">You have the ability to specify a logo which will appear on the upper-right hand region of the portal. It is advised that the height of the logo be at most 32 pixels. The logo is referenced by its absolute path on the file system and must be readable by the user/group your web server is running as.</p>
+    <input type="text" name="center_logo_path" id="center_logo_path" value="" />
+  </div>
+
+  <div class="form-item">
+    <label for="enable_dashboard_tab">Enable Dashboard Tab:</label>
+    <p class="help-text">This release of XDMoD features an optional replacement for the summary tab that is intended to provide easier access to XDMoD's many features. Detailed information is available at https://open.xdmod.org/dashboard.html</p>
+    <select name="enable_dashboard_tab" id="enable_dashboard_tab">
+      <option value="on">on</option>
+      <option value="off" selected>off</option>
+    </select>
+  </div>
+
+  <div class="form-item">
+    <label for="overwrite_config">Overwrite config file '/etc/xdmod/portal_settings.ini'?</label>
+    <select name="overwrite_config" id="overwrite_config">
+      <option value="yes" selected>yes</option>
+      <option value="no">no</option>
+    </select>
+  </div>
+
+  <div class="form-item">
+    <input type="submit" value="Save Settings" />
+  </div>
+</form>
+</body>
+</html>
